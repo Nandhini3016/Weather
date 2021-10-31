@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="itemViewModel"
+            type="com.example.weather.viewmodel.ItemCardViewModel"/>
+        <variable
+            name="viewmodel"
+            type="com.example.weather.viewmodel.HomeViewModel" />
+    </data>
+   <androidx.cardview.widget.CardView
+       android:layout_height="150dp"
+       android:layout_width="match_parent"
+       android:background="@color/black"
+       app:cardElevation="10dp"
+       app:cardCornerRadius="10dp"
+       app:cardPreventCornerOverlap="true"
+       app:cardUseCompatPadding="true">
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <TextView
+               android:id="@+id/celcius_id"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingStart="30dp"
+               android:paddingTop="30dp"
+               android:textStyle="bold"
+               android:textSize="30sp"
+               android:text="@{itemViewModel.component1()}"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               android:paddingLeft="30dp" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingStart="30dp"
+               android:text="@{itemViewModel.component2()}"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/celcius_id"
+               android:paddingLeft="30dp" />
+           <ImageView
+               android:id="@+id/id_rain"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_rain"
+               android:paddingTop="40dp"
+               android:paddingStart="100dp"
+               app:layout_constraintStart_toEndOf="@id/celcius_id"
+               app:layout_constraintTop_toTopOf="parent"
+               android:paddingLeft="100dp" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingTop="35dp"
+               android:paddingStart="10dp"
+               android:text="@{itemViewModel.component3()}"
+               app:layout_constraintStart_toEndOf="@id/id_rain"
+               app:layout_constraintTop_toTopOf="parent"
+               android:paddingLeft="10dp" />
+           <ImageView
+               android:id="@+id/id_wind"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_wind"
+               android:paddingTop="40dp"
+               android:paddingStart="60dp"
+               app:layout_constraintStart_toEndOf="@id/id_rain"
+               app:layout_constraintTop_toTopOf="parent"
+               android:paddingLeft="60dp" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="35dp"
+               android:paddingStart="10dp"
+               android:text="@{itemViewModel.component4()}"
+               app:layout_constraintStart_toEndOf="@id/id_wind"
+               app:layout_constraintTop_toTopOf="parent"
+               android:paddingLeft="10dp" />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </androidx.cardview.widget.CardView>
+</layout>
